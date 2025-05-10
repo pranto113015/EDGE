@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <a href="one.html">Problem 1</a> |
+        <a href="two.html">Problem 2</a> |
+        <a href="three.html">Problem 3</a> |
+        <a href="four.html">Problem 4</a> |
+        <a href="five.html">Problem 5</a> |
+        <a href="six.html">Problem 6</a> |
+        <a href="seven.html">Problem 7</a> |
+        <a href="eight.html">Problem 8</a> |
+        <a href="nine.html">Problem 9</a>
+    </nav> 
+    <br><br>
+    <h1>Problem 2</h1><br>
+    <div>
+        <table border="1" id="data-table">
+            <thead>
+                <tr>
+                    <td>ID</td>
+                    <td>Name</td>
+                    <td>Mobile</td>
+                    <td>Email</td>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Data rows will be populated here -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        // URL of the API
+        const url = 'https://codeandcareer.com/assignments/api/api.php';
+
+        // Fetch data from the API
+        fetch(url)
+            .then(response => {
+                if (!response.ok) {
+                    // Handle HTTP errors
+                    throw new Error('Network response was not ok ' + response.statusText);
+                }
+                return response.json(); // Parse the JSON data
+            })
+            .then(data => {
+                // Access the data and populate the table
+                const tableBody = document.querySelector('#data-table tbody');
+                
+                // Loop through the data and create a row for each entry
+                data.forEach(item => {
+                    const row = document.createElement('tr');
+                    
+                    // Create each cell in the row
+                    const cellId = document.createElement('td');
+                    cellId.textContent = item.id; // Assuming the API returns an "id" field
+                    row.appendChild(cellId);
+                    
+                    const cellName = document.createElement('td');
+                    cellName.textContent = item.name; // Assuming the API returns a "name" field
+                    row.appendChild(cellName);
+                    
+                    const cellMobile = document.createElement('td');
+                    cellMobile.textContent = item.mobile; // Assuming the API returns a "mobile" field
+                    row.appendChild(cellMobile);
+                    
+                    const cellEmail = document.createElement('td');
+                    cellEmail.textContent = item.email; // Assuming the API returns an "email" field
+                    row.appendChild(cellEmail);
+                    
+                    // Append the row to the table body
+                    tableBody.appendChild(row);
+                });
+            })
+            .catch(error => {
+                console.error('Fetch error: ', error); // Handle fetch errors
+            });
+    </script>
+</body>
+</html>

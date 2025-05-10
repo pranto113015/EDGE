@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <a href="one.html">Problem 1</a> |
+        <a href="two.html">Problem 2</a> |
+        <a href="three.html">Problem 3</a> |
+        <a href="four.html">Problem 4</a> |
+        <a href="five.html">Problem 5</a> |
+        <a href="six.html">Problem 6</a> |
+        <a href="seven.html">Problem 7</a> |
+        <a href="eight.html">Problem 8</a> |
+        <a href="nine.html">Problem 9</a>
+    </nav> 
+    <br><br>
+    <h1>Problem 5</h1><br>
+    <div>
+        <p>Your score is: <span id="score">0</span></p>
+        <button id="increaseBtn">Increase</button>
+        <button id="decreaseBtn">Decrease</button>
+    </div>
+
+    <script>
+       
+        const scoreDisplay = document.getElementById("score");
+        const increaseButton = document.getElementById("increaseBtn");
+        const decreaseButton = document.getElementById("decreaseBtn");
+
+      
+        increaseButton.addEventListener("click", function() {
+            let currentScore = parseInt(scoreDisplay.textContent);
+            currentScore += 5;
+            scoreDisplay.textContent = currentScore;
+        });
+
+      
+        decreaseButton.addEventListener("click", function() {
+            let currentScore = parseInt(scoreDisplay.textContent);
+            currentScore -= 10;
+            scoreDisplay.textContent = currentScore;
+        });
+    </script>
+</body>
+</html>

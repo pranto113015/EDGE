@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        button {
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="one.html">Problem 1</a> |
+        <a href="two.html">Problem 2</a> |
+        <a href="three.html">Problem 3</a> |
+        <a href="four.html">Problem 4</a> |
+        <a href="five.html">Problem 5</a> |
+        <a href="six.html">Problem 6</a> |
+        <a href="seven.html">Problem 7</a> |
+        <a href="eight.html">Problem 8</a> |
+        <a href="nine.html">Problem 9</a>
+    </nav> 
+    <br><br>
+    <h1>Problem 4</h1><br>
+    <div>
+        <p id="myParagraph">This is a paragraph</p>
+        <button id="boldBtn">Bold</button>
+        <button id="italicBtn">Italic</button>
+        <button id="underlineBtn">Underline</button>
+    </div>
+
+    <script>
+       
+        const paragraph = document.getElementById("myParagraph");
+        const boldButton = document.getElementById("boldBtn");
+        const italicButton = document.getElementById("italicBtn");
+        const underlineButton = document.getElementById("underlineBtn");
+
+
+        boldButton.addEventListener("click", function() {
+            paragraph.style.fontWeight = paragraph.style.fontWeight === "bold" ? "normal" : "bold";
+        });
+
+
+        italicButton.addEventListener("click", function() {
+            paragraph.style.fontStyle = paragraph.style.fontStyle === "italic" ? "normal" : "italic";
+        });
+
+ 
+        underlineButton.addEventListener("click", function() {
+            paragraph.style.textDecoration = paragraph.style.textDecoration === "underline" ? "none" : "underline";
+        });
+    </script>
+</body>
+</html>
